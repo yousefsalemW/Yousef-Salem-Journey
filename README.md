@@ -48,83 +48,11 @@ This repository is the **Document** and **Share** part of that cycle — which i
 
 A knowledge map of how the learning paths are organized and how they relate. The `1-DevOps` path is sequential by design; everything in `2-DevOps-Tools-and-Concepts` was picked up independently, driven by practice — most of it by the project in `Projects/`.
 
-```mermaid
-flowchart LR
-    ROOT["Alnaqib's Journey<br/>Living Learning Archive"]
+<p align="center">
+  <img src="docs/architecture.png" alt="Alnaqib's Journey — learning architecture: DevOps-Learning, Linux, OpenShift and Projects, with the ordered 1-DevOps path and the practice-driven tools and concepts track" width="100%">
+</p>
 
-    ROOT --> DL["DevOps-Learning"]
-    ROOT --> LINUXP
-    ROOT --> OSP
-    ROOT --> PROJ
-
-    DL --> ORDERED
-    DL --> PRACTICE
-
-    subgraph ORDERED["1-DevOps &nbsp;·&nbsp; ordered learning path"]
-        direction TB
-        M1["Introduction to DevOps"] --> M2["Linux Administration"]
-        M2 --> M3["NGINX"]
-        M3 --> M4["Docker"]
-        M4 --> M5["Kubernetes"]
-        M5 --> M6["Helm"]
-        M6 --> M7["Ansible"]
-        M7 --> M8["AWS Cloud"]
-    end
-
-    subgraph PRACTICE["2-DevOps-Tools-and-Concepts &nbsp;·&nbsp; met through practice"]
-        direction TB
-        T1["AWS Concepts"]
-        T2["Kubernetes Concepts"]
-        T3["HAProxy"]
-        T4["Observability"]
-        T5["SonarQube and Trivy"]
-        T6["Vault"]
-        T7["Velero"]
-
-        T1 --- A1["DynamoDB Locking"]
-        T1 --- A2["RDS + EBS"]
-
-        T2 --- K1["Container Types"]
-        T2 --- K2["Pod Types"]
-        T2 --- K3["Ingress"]
-        T2 --- K4["Network Policy"]
-        T2 --- K5["Kubeadm vs EKS"]
-    end
-
-    subgraph LINUXP["Linux &nbsp;·&nbsp; administration path"]
-        direction TB
-        L1["Book 1"]
-        L2["Book 2"]
-    end
-
-    subgraph OSP["OpenShift &nbsp;·&nbsp; platform path"]
-        direction TB
-        O1["Install"]
-        O2["Authentication and Authorization"]
-        O3["Users, Roles and Permissions"]
-        O4["CLI, GUI and Routes"]
-        O5["Limit Range and Project Templates"]
-    end
-
-    subgraph PROJ["Projects &nbsp;·&nbsp; where the learning is applied"]
-        direction TB
-        PR1["VProfile — DevSecOps Platform on EKS"]
-    end
-
-    PR1 -.-> PRACTICE
-
-    classDef root stroke:#58a6ff,stroke-width:3px
-    classDef area stroke:#58a6ff,stroke-width:2px
-    classDef group stroke:#a371f7,stroke-width:2px
-    classDef leaf stroke:#8b949e,stroke-width:1px
-
-    class ROOT root
-    class DL area
-    class T1,T2 group
-    class M1,M2,M3,M4,M5,M6,M7,M8,T3,T4,T5,T6,T7,A1,A2,K1,K2,K3,K4,K5,L1,L2,O1,O2,O3,O4,O5,PR1 leaf
-```
-
-The dotted line is the honest direction of causality: the project is what forced most of the tools and concepts track into existence, not the other way around.
+The ordering inside `1-DevOps` is deliberate; the tools and concepts track is not a sequence — each item entered the archive when a project needed it.
 
 ---
 
